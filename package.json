@@ -1,0 +1,32 @@
+{
+  "name": "mongocheerio",
+  "version": "1.0.0",
+  "description": "current events scraper with article commenting abilities",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fieldpalmer/mongoCheerio.git"
+  },
+  "keywords": [
+    "mongo",
+    "mongoDB",
+    "cheerio",
+    "web-scraping"
+  ],
+  "author": "fieldpalmer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fieldpalmer/mongoCheerio/issues"
+  },
+  "homepage": "https://github.com/fieldpalmer/mongoCheerio#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "cheerio": "^1.0.0-rc.2",
+    "express": "^4.16.4",
+    "express-handlebars": "^3.0.0",
+    "mongoose": "^5.3.15"
+  }
+}
