@@ -6,21 +6,17 @@ const ArticleSchema = new Schema({
     type: String,
     required: true
   },
-  // summary: {
-  //   type: String,
-  //   required: true
-  // },
   link: {
     type: String,
     required: true
   },
   img: {
     type: String,
-    // required: true
+    required: true
   },
   author: {
     type: String,
-    // required: true
+    required: true
   },
   date: {
     type: String,

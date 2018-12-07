@@ -18,7 +18,7 @@ $.getJSON("/articles", function(data) {
   // }
 });
 
-$(document).on("mouseover", "#articleRow", function() {
+$(document).on("mouseenter", "#articleRow", function() {
   $("#notes").empty();
   //saves id of article being clicked
   const thisId = $(this).attr("data-id");
