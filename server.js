@@ -28,7 +28,25 @@ app.use(express.json());
 app.use(express.static("public"));
 
 // Connect to the Mongo DB
-mongoose.connect("mongodb://localhost/cheerioDB", { useNewUrlParser: true });
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
+
+mongoose.connect(MONGODB_URI);
+// let databaseUri = "mongodb://localhost/cheerioDB";
+// if (process.env.MONGODB_URI) {
+//   mongoose.connect(process.env.MONGODB_URI);
+// } else {
+//   mongoose.connect(databaseUri);
+// }
+
+// var db = mongoose.connection;
+
+// db.on("error", function(err) {
+//   console.log("Mongoose Error: ", err)
+// });
+
+// db.once("open", function(err) {
+//   console.log("mongoose Connection Successful");
+// })
 
 // Routes
 
