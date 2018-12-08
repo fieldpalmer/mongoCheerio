@@ -31,22 +31,23 @@ app.use(express.static("public"));
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
 
 mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
-// let databaseUri = "mongodb://localhost/cheerioDB";
-// if (process.env.MONGODB_URI) {
-//   mongoose.connect(process.env.MONGODB_URI);
-// } else {
-//   mongoose.connect(databaseUri);
-// }
 
-// var db = mongoose.connection;
+let databaseUri = "mongodb://localhost/cheerioDB";
+if (process.env.MONGODB_URI) {
+  mongoose.connect(process.env.MONGODB_URI);
+} else {
+  mongoose.connect(databaseUri);
+}
 
-// db.on("error", function(err) {
-//   console.log("Mongoose Error: ", err)
-// });
+var db = mongoose.connection;
 
-// db.once("open", function(err) {
-//   console.log("mongoose Connection Successful");
-// })
+db.on("error", function(err) {
+  console.log("Mongoose Error: ", err)
+});
+
+db.once("open", function(err) {
+  console.log("mongoose Connection Successful");
+})
 
 // Routes
 
