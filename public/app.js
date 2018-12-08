@@ -27,11 +27,30 @@ $(document).on("mouseenter", "#articleRow", function() {
     method: "GET",
     url: "/articles/" + thisId
   }).then(function(data) {
-    console.log(data);
-    $("#notes").append("<h2>" + data.title + "</h2>");
-    $("#notes").append("<input id='titleinput' name='title' >");
-    $("#notes").append("<textarea id='bodyinput' name='body'></textarea>");
-    $("#notes").append("<button data-id='" + data._id + "' id='savenote'>Save Note</button>");
+    // console.log(data);
+    
+    // var source = $("#note-template").html();
+    // var template = Handlebars.compile(source);
+    // var html = template({data: data});
+    // $("#notes").html(html);
+    let articleTitle = $("<h3 class='p-2'>")
+      .text(data.title);
+
+    let noteTitle = $("<input id='titleinput' name='title'>")
+      .attr("placeholder", "TITLE");
+
+    let textArea = $("<textarea id='bodyinput' name='body'>")
+      .attr("placeholder", "notes");
+
+    let saveButton = $("<button class='btn-info' id='savenote'>")
+      .attr("data-id", data._id)
+      .text("Save Note");
+
+
+    $("#notes").append(articleTitle);
+    $("#notes").append(noteTitle);
+    $("#notes").append(textArea);
+    $("#notes").append(saveButton);
     // If there's a note already
     if (data.note) {
       // Place the title of the note in the title input
