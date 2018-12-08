@@ -1,5 +1,5 @@
 var express = require("express");
-// var logger = require("morgan");
+var logger = require("morgan");
 var mongoose = require("mongoose");
 var moment = require("moment");
 
@@ -20,7 +20,7 @@ var app = express();
 // Configure middleware
 
 // Use morgan logger for logging requests
-// app.use(logger("dev"));
+app.use(logger("dev"));
 // Parse request body as JSON
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -28,11 +28,11 @@ app.use(express.json());
 app.use(express.static("public"));
 
 // Connect to the Mongo DB
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/cheerioDB";
 
 mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
 
-// let databaseUri = "mongodb://localhost/cheerioDB";
+// var databaseUri = "mongodb://localhost/cheerioDB";
 // if (process.env.MONGODB_URI) {
 //   mongoose.connect(process.env.MONGODB_URI);
 // } else {
