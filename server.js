@@ -20,7 +20,6 @@ app.use(express.static("public"));
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/cheerioDB";
 mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
 
-// var databaseUri = ";
 // if (process.env.MONGODB_URI) {
 //   mongoose.connect(process.env.MONGODB_URI);
 // } else {
